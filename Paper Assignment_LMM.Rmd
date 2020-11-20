@@ -1,0 +1,31 @@
+---
+title: "Paper 2 Assignment - LMMs"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(dplyr)
+library(nlme)
+library(lme4)
+library(mlmRev)
+library(lattice)
+data(Exam)
+```
+
+# Exam scores from inner London
+
+For this paper, you will continue working with the data set we used in the previous R lab. The outcome of interest is normexam, and it is up to you to formulate your own hypotheses and appropriate models that take advantage of the hierarchical nature of the data. Note, the models from the R lab are not necessarily the best models. I encourage you to use the hierarchical framework from the notes to build up candidate models, leveraging the individual and group level structures in the data .The R packages used in the R lab are available in the code chunk above. You will be graded on the entirity of this paper.
+
+These data (`Exam`) were collected on examination results from inner London schools in a study from 1993 to analyze the relationships between standardized LRT, verbal reasoning category, and school gender. The variables are as follows:
+
+- `school`: School ID (a factor)
+- `normexam`: Normalized exam score
+- `schgend`: School gender (a factor); levels are `mixed`, `boys`, `girls`
+- `schavg`: School average of intake score
+- `vr`: Student level Verbal Reasoning (VR) score band at intake (a factor). Levels are `bottom 25%`, `mid 50%`, `top 25%`
+- `standLRT`: Standardized London Reading test (LRT) score
+- `sex`: Sex of the student - levels are `F` and `M`
+- `type`: School type - levels are `Mxd` and `Sngl`
+- `student`: Student id (within school, a factor)
